@@ -1,0 +1,58 @@
+{
+	"healthStatusOK": true,
+	"cache": [{
+		"threshholdOk": true
+	}, {
+		"message": "Cache check successful"
+	}],
+	"memory": [{
+		"threshholdOk": true
+	}, {
+		"message": "Heap Memory is ok. total memory: 129761280 , free memory: 75504848 , max memory: 1038876672 "
+	}],
+	"threads": [{
+		"threshholdOk": true
+	}, {
+		"message": "Queued thread Pool is ok. max threads: 200 , idle threads:  4 , current threads: 8"
+	}],
+	"No of threads in JVM": [{
+		"threshholdOk": true
+	}, {
+		"message": "Total number of Threads in JVM is under the limit of 1000. No of threads in JVM: 54"
+	}],
+	"dbConnection": [{
+		"threshholdOk": "true"
+	}, {
+		"message": ""
+	}],
+	"fileDescriptor": [{
+		"threshholdOk": true
+	}, {
+		"message": "File descriptors are ok. open file descriptors: 313 , max file descriptors: 65536"
+	}],
+	"httpConnection": [{
+		"threshholdOk": true
+	}, {
+		"message": "Number of http connections in pool are ok. connections in pool: 1 , max connections: 1000 "
+	}],
+	"stuckThreadDetails": [{
+		"stuckThreadExist": false
+	}, {
+		"message": "No stuck threads found"
+	}],
+	"zookeeper": [{
+		"threshholdOk": true
+	}, {
+		"message": ""
+	}],
+	"mongo": [{
+		"threshholdOk": true
+	}, {
+		"message": ""
+	}],
+	"cassandra": [{
+		"threshholdOk": true
+	}, {
+		"message": ""
+	}]
+}
