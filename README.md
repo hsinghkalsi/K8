@@ -1,8 +1,8 @@
 # K8
 
+This repository can be used to demonstrate the container discovery feature using nri-flex. 
 
-## Prerequisites 
-
+## Requirements
 
 - Docker 
 - [Minikube with kubectl](https://kubernetes.io/docs/tasks/tools/install-minikube/) 
