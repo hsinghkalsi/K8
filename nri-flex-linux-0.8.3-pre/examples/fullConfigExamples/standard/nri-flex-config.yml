@@ -1,0 +1,7 @@
+integration_name: com.newrelic.nri-flex
+
+instances:
+  - name: nri-flex
+    command: metrics
+    labels:
+      owner: cloud

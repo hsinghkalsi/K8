@@ -1,0 +1,13 @@
+#http://192.168.64.6:31448/jolokia/read/java.lang:type=Memory
+# if using kubernetes add it as a environment variable
+---
+name: jolokiaFlex
+global:
+    base_url: http://${auto:ip}:${auto:port}/jolokia/read/
+apis: 
+  - event_type: jolokiaMemorySample  ## http://192.168.64.6:31448/jolokia/read/java.lang:type=Memory
+    url: java.lang:type=Memory
+  - event_type: jolokiaCatalinaThreadpool  ##  http://192.168.64.6:31448/jolokia/read/Catalina:name=*,type=ThreadPool
+    url: Catalina:name=*,type=ThreadPool
+  - event_type: jolokiaCatalinaServlet  ## http://192.168.64.6:31448/jolokia/read/Catalina:J2EEApplication=*,J2EEServer=*,WebModule=*,j2eeType=Servlet,name=*
+    url: Catalina:J2EEApplication=*,J2EEServer=*,WebModule=*,j2eeType=Servlet,name=*

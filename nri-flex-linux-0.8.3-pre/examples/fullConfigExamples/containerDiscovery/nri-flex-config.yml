@@ -1,0 +1,9 @@
+integration_name: com.newrelic.nri-flex
+
+instances:
+  - name: nri-flex
+    command: metrics
+    arguments:
+      container_discovery: true
+    labels:
+      owner: cloud
