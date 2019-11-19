@@ -55,52 +55,54 @@
         - event_type: jolokiaCatalinaServlet  ## http://192.168.64.6:31448/jolokia/read/Catalina:J2EEApplication=*,J2EEServer=*,WebModule=*,j2eeType=Servlet,name=*
             url: Catalina:J2EEApplication=*,J2EEServer=*,WebModule=*,j2eeType=Servlet,name=*
     ```
+
 * Edit the docker file to ADD flexContainerDiscovery folder to be added in arget docker image 
-        ***Sample Dockerfile***
+        
+    ***Sample Dockerfile***
 
-        ```
-        FROM newrelic/infrastructure:1.7.1
+    ```
+    FROM newrelic/infrastructure:1.7.1
 
-        # Note if using for Kubernetes you could alternatively set these options in your deployment yaml too
+    # Note if using for Kubernetes you could alternatively set these options in your deployment yaml too
 
-        # define license key as below, or copy a newrelic-infra.yml over
-        # refer to here for more info: https://hub.docker.com/r/newrelic/infrastructure/
-        # ENV NRIA_LICENSE_KEY=1234567890abcdefghijklmnopqrstuvwxyz1234
+    # define license key as below, or copy a newrelic-infra.yml over
+    # refer to here for more info: https://hub.docker.com/r/newrelic/infrastructure/
+    # ENV NRIA_LICENSE_KEY=1234567890abcdefghijklmnopqrstuvwxyz1234
 
-        # disable the newrelic infrastructure agent from performing any additional monitoring
-        # using forwarder mode will only make it responsible for executing integrations
-        ENV NRIA_IS_FORWARD_ONLY true
+    # disable the newrelic infrastructure agent from performing any additional monitoring
+    # using forwarder mode will only make it responsible for executing integrations
+    ENV NRIA_IS_FORWARD_ONLY true
 
-        # Enable Container Discovery for all orchestrators (for Fargate see below option)
-        ENV CONTAINER_DISCOVERY true
+    # Enable Container Discovery for all orchestrators (for Fargate see below option)
+    ENV CONTAINER_DISCOVERY true
 
-        # Enable Container Discovery for Fargate
-        # ENV FARGATE true
+    # Enable Container Discovery for Fargate
+    # ENV FARGATE true
 
-        # Allow environment variables to be passed through to flex
-        # https://docs.newrelic.com/docs/infrastructure/install-configure-manage-infrastructure/configuration/infrastructure-configuration-settings#integrations-variables
-        ENV NRIA_PASSTHROUGH_ENVIRONMENT="CONTAINER_DISCOVERY,GIT_SERVICE,GIT_REPO,GIT_TOKEN,GIT_USER,INSIGHTS_API_KEY,INSIGHTS_URL,EVENT_LIMIT,FARGATE,METRIC_API_URL,METRIC_API_KEY"
+    # Allow environment variables to be passed through to flex
+    # https://docs.newrelic.com/docs/infrastructure/install-configure-manage-infrastructure/configuration/infrastructure-configuration-settings#integrations-variables
+    ENV NRIA_PASSTHROUGH_ENVIRONMENT="CONTAINER_DISCOVERY,GIT_SERVICE,GIT_REPO,GIT_TOKEN,GIT_USER,INSIGHTS_API_KEY,INSIGHTS_URL,EVENT_LIMIT,FARGATE,METRIC_API_URL,METRIC_API_KEY"
 
-        # create some needed default directories for flex
-        RUN mkdir -p /var/db/newrelic-infra/custom-integrations/flexConfigs/
-        RUN mkdir -p /var/db/newrelic-infra/custom-integrations/flexContainerDiscovery/
+    # create some needed default directories for flex
+    RUN mkdir -p /var/db/newrelic-infra/custom-integrations/flexConfigs/
+    RUN mkdir -p /var/db/newrelic-infra/custom-integrations/flexContainerDiscovery/
 
-        # if using container discovery configs uncomment this section
-        # https://github.com/newrelic/nri-flex/wiki/Service-Discovery
-        ADD flexConfigs /var/db/newrelic-infra/custom-integrations/flexConfigs/
-        ADD flexContainerDiscovery /var/db/newrelic-infra/custom-integrations/flexContainerDiscovery/
-
-
-        # copy config/definition/binary over
-        COPY ./nri-flex-config.yml /etc/newrelic-infra/integrations.d/
-        COPY ./nri-flex-definition.yml /var/db/newrelic-infra/custom-integrations/nri-flex-definition.yml
-        COPY ./nri-flex /var/db/newrelic-infra/custom-integrations/nri-flex
-
-        # eg adding netcat if extra packages are needed
-        # RUN apk add --update netcat-openbsd && rm -rf /var/cache/apk/*
+    # if using container discovery configs uncomment this section
+    # https://github.com/newrelic/nri-flex/wiki/Service-Discovery
+    ADD flexConfigs /var/db/newrelic-infra/custom-integrations/flexConfigs/
+    ADD flexContainerDiscovery /var/db/newrelic-infra/custom-integrations/flexContainerDiscovery/
 
 
-        ```
+    # copy config/definition/binary over
+    COPY ./nri-flex-config.yml /etc/newrelic-infra/integrations.d/
+    COPY ./nri-flex-definition.yml /var/db/newrelic-infra/custom-integrations/nri-flex-definition.yml
+    COPY ./nri-flex /var/db/newrelic-infra/custom-integrations/nri-flex
+
+    # eg adding netcat if extra packages are needed
+    # RUN apk add --update netcat-openbsd && rm -rf /var/cache/apk/*
+
+
+    ```
 
 * Create docker image 
         
