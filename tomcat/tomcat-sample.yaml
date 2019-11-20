@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: tomcat
-        image: singhharkamal/java-app:2.0
+        image: singhharkamal/java-app:2.1
         env:
         - name: flexDiscoveryTomcatJolokia
           value: "t=tomcat,c=jolokia,tt=img,tm=contains"

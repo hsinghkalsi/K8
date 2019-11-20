@@ -1,0 +1,9 @@
+## http://192.168.64.8:30002/bjeans/metricTelegraf.json
+# if using kubernetes add it as a environment variable
+---
+name: metricsTelegrafFlex
+global:
+    base_url: http://${auto:ip}:${auto:port}/bjeans/
+apis: 
+  - event_type: metricTelegrafSample  ## http://192.168.64.6:31448/jolokia/read/java.lang:type=Memory
+    url: metricTelegraf.json

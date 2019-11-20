@@ -1,0 +1,9 @@
+## http://192.168.64.8:30002/bjeans/healthstatus.json
+# if using kubernetes add it as a environment variable
+---
+name: healthStatusFlex
+global:
+    base_url: http://${auto:ip}:${auto:port}/bjeans/
+apis: 
+  - event_type: healthStatusSample  ## http://192.168.64.6:31448/jolokia/read/java.lang:type=Memory
+    url: healthstatus.json

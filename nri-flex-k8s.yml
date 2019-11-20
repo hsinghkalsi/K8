@@ -22,7 +22,7 @@ spec:
           imagePullPolicy: Always
           env:
           - name: NRIA_LICENSE_KEY
-            value: "123"
+            value: "xxxxxxxxxxxxxx"
           - name: CONTAINER_DISCOVERY
             value: "true"
           ### Sync integrations dynamically from your git repository

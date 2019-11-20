@@ -44,7 +44,7 @@ spec:
             - name: "CLUSTER_NAME"
               value: "hsingh-k8"
             - name: "NRIA_LICENSE_KEY"
-              value: "123"
+              value: "xxxxxxxxxxxxxxx"
             - name: "NRIA_VERBOSE"
               value: "0"
             #- name: "CADVISOR_PORT" # Enable direct connection to cAdvisor by specifying the port. Needed for Kubernetes versions prior to 1.7.6.
