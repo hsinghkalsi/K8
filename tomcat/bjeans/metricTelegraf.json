@@ -1,99 +1,99 @@
 {
-	"pools.Code-Cache.committed": {
-		"value": 45481984
+	"pools.Code-Cache.committed":{
+	   "value":45481984
 	},
-	"org.apache.http.client.HttpClient.READ.10.28.19.193.get-requests": {
-		"count": 34526,
-		"min": 356811,
-		"max": 13608363,
-		"mean": 514670.60523561726,
-		"median": 484312.0,
-		"95thPercentile": 600473.0,
-		"98thPercentile": 771302.0,
-		"99thPercentile": 771302.0
+	"org.apache.http.client.HttpClient.READ.10.28.19.193.get-requests":{
+	   "count":34526,
+	   "min":356811,
+	   "max":13608363,
+	   "mean":514670.60523561726,
+	   "median":484312.0,
+	   "95thPercentile":600473.0,
+	   "98thPercentile":771302.0,
+	   "99thPercentile":771302.0
 	},
-	"pools.Par-Survivor-Space.used": {
-		"value": 1778480
+	"pools.Par-Survivor-Space.used":{
+	   "value":1778480
 	},
-	"pools.Par-Eden-Space.usage": {
-		"value": 0.019798973692414908
+	"pools.Par-Eden-Space.usage":{
+	   "value":0.019798973692414908
 	},
-	"jetty.5xx-responses": {
-		"count": 0,
-		"fifteenMinuteRate": 0.0,
-		"fiveMinuteRate": 0.0,
-		"meanRate": 0.0,
-		"oneMinuteRate": 0.0
+	"jetty.5xx-responses":{
+	   "count":0,
+	   "fifteenMinuteRate":0.0,
+	   "fiveMinuteRate":0.0,
+	   "meanRate":0.0,
+	   "oneMinuteRate":0.0
 	},
-	"jetty.async-timeouts": {
-		"count": 0,
-		"fifteenMinuteRate": 0.0,
-		"fiveMinuteRate": 0.0,
-		"meanRate": 0.0,
-		"oneMinuteRate": 0.0
+	"jetty.async-timeouts":{
+	   "count":0,
+	   "fifteenMinuteRate":0.0,
+	   "fiveMinuteRate":0.0,
+	   "meanRate":0.0,
+	   "oneMinuteRate":0.0
 	},
-	"jetty.2xx-responses": {
-		"count": 79869,
-		"fifteenMinuteRate": 0.6317342411056862,
-		"fiveMinuteRate": 0.6134451266889314,
-		"meanRate": 0.6165307199474488,
-		"oneMinuteRate": 0.6112881399098504
+	"jetty.2xx-responses":{
+	   "count":79869,
+	   "fifteenMinuteRate":0.6317342411056862,
+	   "fiveMinuteRate":0.6134451266889314,
+	   "meanRate":0.6165307199474488,
+	   "oneMinuteRate":0.6112881399098504
 	},
-	"jetty.3xx-responses": {
-		"count": 0,
-		"fifteenMinuteRate": 0.0,
-		"fiveMinuteRate": 0.0,
-		"meanRate": 0.0,
-		"oneMinuteRate": 0.0
+	"jetty.3xx-responses":{
+	   "count":0,
+	   "fifteenMinuteRate":0.0,
+	   "fiveMinuteRate":0.0,
+	   "meanRate":0.0,
+	   "oneMinuteRate":0.0
 	},
-	"async-eventbus.window-60.queueSize": {
-		"count": 12954,
-		"min": 0,
-		"max": 0,
-		"mean": 0.0,
-		"median": 0.0,
-		"95thPercentile": 0.0,
-		"98thPercentile": 0.0,
-		"99thPercentile": 0.0
+	"async-eventbus.window-60.queueSize":{
+	   "count":12954,
+	   "min":0,
+	   "max":0,
+	   "mean":0.0,
+	   "median":0.0,
+	   "95thPercentile":0.0,
+	   "98thPercentile":0.0,
+	   "99thPercentile":0.0
 	},
-	"org.apache.log4j.Appender.warn": {
-		"count": 44,
-		"fifteenMinuteRate": 0.0012186457631171998,
-		"fiveMinuteRate": 0.0016926915131245737,
-		"meanRate": 3.396390060236792E-4,
-		"oneMinuteRate": 4.0875798568313477E-4
+	"org.apache.log4j.Appender.warn":{
+	   "count":44,
+	   "fifteenMinuteRate":0.0012186457631171998,
+	   "fiveMinuteRate":0.0016926915131245737,
+	   "meanRate":3.396390060236792E-4,
+	   "oneMinuteRate":4.0875798568313477E-4
 	},
-	"jetty.4xx-responses": {
-		"count": 8,
-		"fifteenMinuteRate": 2.7516322408595213E-26,
-		"fiveMinuteRate": 5.060358692515767E-71,
-		"meanRate": 6.175419448256142E-5,
-		"oneMinuteRate": 2.964393875E-314
+	"jetty.4xx-responses":{
+	   "count":8,
+	   "fifteenMinuteRate":2.7516322408595213E-26,
+	   "fiveMinuteRate":5.060358692515767E-71,
+	   "meanRate":6.175419448256142E-5,
+	   "oneMinuteRate":2.964393875E-314
 	},
-	"jetty.connect-requests": {
-		"count": 0,
-		"min": 0,
-		"max": 0,
-		"mean": 0.0,
-		"median": 0.0,
-		"95thPercentile": 0.0,
-		"98thPercentile": 0.0,
-		"99thPercentile": 0.0
+	"jetty.connect-requests":{
+	   "count":0,
+	   "min":0,
+	   "max":0,
+	   "mean":0.0,
+	   "median":0.0,
+	   "95thPercentile":0.0,
+	   "98thPercentile":0.0,
+	   "99thPercentile":0.0
 	},
-	"jetty.other-requests": {
-		"count": 0,
-		"min": 0,
-		"max": 0,
-		"mean": 0.0,
-		"median": 0.0,
-		"95thPercentile": 0.0,
-		"98thPercentile": 0.0,
-		"99thPercentile": 0.0
+	"jetty.other-requests":{
+	   "count":0,
+	   "min":0,
+	   "max":0,
+	   "mean":0.0,
+	   "median":0.0,
+	   "95thPercentile":0.0,
+	   "98thPercentile":0.0,
+	   "99thPercentile":0.0
 	},
-	"pools.Compressed-Class-Space.usage": {
-		"value": 0.0071301087737083435
+	"pools.Compressed-Class-Space.usage":{
+	   "value":0.0071301087737083435
 	},
-	"org.apache.http.conn.HttpClientConnectionManager.leased-connections": {
-		"value": 0
+	"org.apache.http.conn.HttpClientConnectionManager.leased-connections":{
+	   "value":0
 	}
-}
+ }

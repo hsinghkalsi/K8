@@ -4,7 +4,7 @@
 name: healthStatusFlexV2
 container_discovery:
   mode: contains # default: contains, other options: prefix, suffix, contains, regex
-  type: container # default: container, other options: image
+  type: image # default: container, other options: image
   target: tomcat # default: text after the "cd-" in the config file name
   ip_mode: private # default: automatically set, other options: public, private
 global:
@@ -12,3 +12,15 @@ global:
 apis: 
   - event_type: healthStatusSampleV2  ## http://192.168.64.6:31448/jolokia/read/java.lang:type=Memory
     url: healthstatus.json
+    lazy_flatten:
+      - cache
+      - memory
+      - threads
+      - No of threads in JVM
+      - dbConnection
+      - fileDescriptor
+      - httpConnection
+      - stuckThreadDetails
+      - zookeeper
+      - mongo
+      - cassandra

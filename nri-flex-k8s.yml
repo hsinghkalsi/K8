@@ -18,11 +18,11 @@ spec:
     spec:
       containers:
         - name: nri-flex
-          image: "singhharkamal/nriflex:1.6"
+          image: "singhharkamal/nriflex:2.0"
           imagePullPolicy: Always
           env:
           - name: NRIA_LICENSE_KEY
-            value: "xxxxxxxxxxxxxx"
+            value: "XXXXXXXXXX"
           - name: CONTAINER_DISCOVERY
             value: "true"
           ### Sync integrations dynamically from your git repository

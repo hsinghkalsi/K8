@@ -4,7 +4,7 @@
 name: jolokiaFlexV2
 container_discovery:
   mode: contains # default: contains, other options: prefix, suffix, contains, regex
-  type: container # default: container, other options: image
+  type: image # default: container, other options: image
   target: tomcat # default: text after the "cd-" in the config file name
   ip_mode: private # default: automatically set, other options: public, private
 global:
