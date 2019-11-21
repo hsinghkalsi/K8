@@ -1,0 +1,34 @@
+## http://192.168.64.8:30002/bjeans/metricTelegraf.json
+# if using kubernetes add it as a environment variable
+---
+name: bjmetricFlexV2
+container_discovery:
+  mode: contains # default: contains, other options: prefix, suffix, contains, regex
+  type: container # default: container, other options: image
+  target: tomcat # default: text after the "cd-" in the config file name
+  #ip_mode: private # default: automatically set, other options: public, private
+global:
+    base_url: http://${auto:ip}:${auto:port}/
+apis: 
+  - event_type: bjmetricSampleV2  ## http://192.168.64.6:31448/jolokia/read/java.lang:type=Memory
+    url: bjeans/metricTelegraf.json
+  - event_type: healthStatusSampleV2  ## http://192.168.64.6:31448/jolokia/read/java.lang:type=Memory
+    url: bjeans/healthstatus.json
+    lazy_flatten:
+      - cache
+      - memory
+      - threads
+      - No of threads in JVM
+      - dbConnection
+      - fileDescriptor
+      - httpConnection
+      - stuckThreadDetails
+      - zookeeper
+      - mongo
+      - cassandra
+  - event_type: jolokiaMemorySampleV2  ## http://192.168.64.6:31448/jolokia/read/java.lang:type=Memory
+    url: /jolokia/read/java.lang:type=Memory
+  - event_type: jolokiaCatalinaThreadpoolV2  ##  http://192.168.64.6:31448/jolokia/read/Catalina:name=*,type=ThreadPool
+    url: /jolokia/read/Catalina:name=*,type=ThreadPool
+  - event_type: jolokiaCatalinaServletV2  ## http://192.168.64.6:31448/jolokia/read/Catalina:J2EEApplication=*,J2EEServer=*,WebModule=*,j2eeType=Servlet,name=*
+    url: /jolokia/read/Catalina:J2EEApplication=*,J2EEServer=*,WebModule=*,j2eeType=Servlet,name=*

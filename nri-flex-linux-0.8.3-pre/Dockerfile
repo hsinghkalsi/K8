@@ -26,9 +26,9 @@ RUN mkdir -p /var/db/newrelic-infra/custom-integrations/flexContainerDiscovery/
 
 # if using container discovery configs uncomment this section
 # https://github.com/newrelic/nri-flex/wiki/Service-Discovery
-## ADD flexConfigs /var/db/newrelic-infra/custom-integrations/flexConfigs/
-ADD flexContainerDiscovery /var/db/newrelic-infra/custom-integrations/flexContainerDiscovery/
-
+ADD flexConfigs /var/db/newrelic-infra/custom-integrations/flexConfigs/
+## ADD flexContainerDiscovery /var/db/newrelic-infra/custom-integrations/flexContainerDiscovery/
+## ADD flexConfigs /var/db/newrelic-infra/custom-integrations/flexContainerDiscovery/
 
 # copy config/definition/binary over
 COPY ./nri-flex-config.yml /etc/newrelic-infra/integrations.d/
