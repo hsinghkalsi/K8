@@ -10,7 +10,7 @@ This repository can be used to demonstrate the container discovery feature using
 - [nri-flex](https://github.com/newrelic/nri-flex)
 - Clone this repository
 
-### Configuring Sample Tomcat application with Jolokia
+### Configuring Sample Tomcat application with Jolokia and sample metrics json 
 
 * Using the dockerfile in ***./tomcat*** directory create a docker image
   ```
@@ -27,7 +27,7 @@ This repository can be used to demonstrate the container discovery feature using
     image: <dockerid>/java-app:2.0
     ```
 
-*  Check ./tomcat/tomcat-sample.yaml file to validate flexDiscoveryTomcatJolokia is passed as environment variable to be compliant with [V1 Container Discovery ](https://github.com/newrelic/nri-flex/wiki/Service-Discovery#v1-container-discovery) feature
+*  Check ./tomcat/tomcat-sample.yaml file to validate flexDiscoveryTomcatJolokia ( and others) is passed as environment variable to be compliant with [V1 Container Discovery ](https://github.com/newrelic/nri-flex/wiki/Service-Discovery#v1-container-discovery) feature
 
     ```
     env:
@@ -122,7 +122,7 @@ This repository can be used to demonstrate the container discovery feature using
     ```
     containers:
     - name: nri-flex
-        image: "<dockerID>/nriflex:1.6"
+        image: "<dockerID>/nriflex:2.0"
         imagePullPolicy: Always
         env:
         - name: NRIA_LICENSE_KEY
