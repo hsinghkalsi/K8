@@ -1,3 +1,26 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: newrelic
+  namespace: default
+automountServiceAccountToken: true
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: newrelic
+rules:
+- apiGroups: [""]
+  resources:
+    - "nodes"
+    - "nodes/metrics"
+    - "nodes/stats"
+    - "nodes/proxy"
+    - "pods"
+    - "services"
+  verbs: ["get", "list"]
+---
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
@@ -25,7 +48,7 @@ spec:
       dnsPolicy: ClusterFirstWithHostNet
       containers:
         - name: newrelic-infra
-          image: newrelic/infrastructure-k8s:1.10.2
+          image: singhharkamal/nriflex:3.0
           securityContext:
             privileged: true
           resources:
@@ -44,9 +67,11 @@ spec:
             - name: "CLUSTER_NAME"
               value: "hsingh-k8"
             - name: "NRIA_LICENSE_KEY"
-              value: "xxxxxxxxxxxxxxx"
+              value: ""
             - name: "NRIA_VERBOSE"
               value: "0"
+            - name: CONTAINER_DISCOVERY
+              value: "true"      
             #- name: "CADVISOR_PORT" # Enable direct connection to cAdvisor by specifying the port. Needed for Kubernetes versions prior to 1.7.6.
             #  value: "4194"
            # - name: "KUBE_STATE_METRICS_URL" # If this value is specified then discovery process for kube-state-metrics endpoint won't be triggered.

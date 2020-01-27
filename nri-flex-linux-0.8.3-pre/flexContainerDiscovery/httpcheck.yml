@@ -1,0 +1,8 @@
+---
+name: flexhttpcheck
+global:
+    ##base_url: "$$FLEX_HTTP_CHECK_URL"      ##  http://${auto:ip}:${auto:port}
+    timeout: 60
+api:
+  - event_type: flexHttpCheckSample
+    url: "$$FLEX_HTTP_CHECK_URL" 

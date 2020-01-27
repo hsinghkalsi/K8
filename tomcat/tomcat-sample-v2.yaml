@@ -1,0 +1,54 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat
+  labels:
+    app: tomcatV2
+    release: v2
+  annotations:
+    ##flexDiscoveryHTTP: "t_httpCheck"
+    ##flexDiscoveryHTTP: "t_tomcat.c_jolokia2.tt_img.tm_contains"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tomcat
+  template:
+    metadata:
+      labels:
+        app: tomcat
+    spec:
+      containers:
+      - name: tomcat
+        image: singhharkamal/java-app:2.3
+        env:
+        - name: flexDiscoveryTomcatJolokia
+          value: "t=httpcheck"
+        - name: FLEX_HTTP_CHECK_URL
+          value: "http://${auto:ip}:${auto:port}/jolokia/read/java.lang:type=Memory"
+        - name: FLEX_HTTP_CHECK_TIMEOUT
+          value: "60"
+        ports:
+        - containerPort: 8080
+          name: http
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: tomcat-service
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  selector:
+    app: tomcat
+      
+
+
+    

@@ -6,6 +6,7 @@ metadata:
   name: tomcat
   labels:
     app: tomcat
+    release: v1
 spec:
   replicas: 1
   selector:

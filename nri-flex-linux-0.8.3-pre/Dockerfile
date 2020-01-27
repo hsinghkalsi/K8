@@ -18,7 +18,7 @@ ENV CONTAINER_DISCOVERY true
 
 # Allow environment variables to be passed through to flex
 # https://docs.newrelic.com/docs/infrastructure/install-configure-manage-infrastructure/configuration/infrastructure-configuration-settings#integrations-variables
-ENV NRIA_PASSTHROUGH_ENVIRONMENT="CONTAINER_DISCOVERY,GIT_SERVICE,GIT_REPO,GIT_TOKEN,GIT_USER,INSIGHTS_API_KEY,INSIGHTS_URL,EVENT_LIMIT,FARGATE,METRIC_API_URL,METRIC_API_KEY"
+ENV NRIA_PASSTHROUGH_ENVIRONMENT="CONTAINER_DISCOVERY,GIT_SERVICE,GIT_REPO,GIT_TOKEN,GIT_USER,INSIGHTS_API_KEY,INSIGHTS_URL,EVENT_LIMIT,FARGATE,METRIC_API_URL,METRIC_API_KEY,KUBERNETES_SERVICE_HOST,KUBERNETES_SERVICE_PORT"
 
 # create some needed default directories for flex
 RUN mkdir -p /var/db/newrelic-infra/custom-integrations/flexConfigs/
@@ -26,8 +26,8 @@ RUN mkdir -p /var/db/newrelic-infra/custom-integrations/flexContainerDiscovery/
 
 # if using container discovery configs uncomment this section
 # https://github.com/newrelic/nri-flex/wiki/Service-Discovery
-ADD flexConfigs /var/db/newrelic-infra/custom-integrations/flexConfigs/
-## ADD flexContainerDiscovery /var/db/newrelic-infra/custom-integrations/flexContainerDiscovery/
+## ADD flexConfigs /var/db/newrelic-infra/custom-integrations/flexConfigs/
+ADD flexContainerDiscovery /var/db/newrelic-infra/custom-integrations/flexContainerDiscovery/
 ## ADD flexConfigs /var/db/newrelic-infra/custom-integrations/flexContainerDiscovery/
 
 # copy config/definition/binary over

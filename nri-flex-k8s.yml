@@ -16,13 +16,16 @@ spec:
       labels:
         name: nri-flex
     spec:
+      serviceAccountName: newrelic
       containers:
         - name: nri-flex
-          image: "singhharkamal/nriflex:2.0"
+          image: "singhharkamal/nriflex:7.1"
           imagePullPolicy: Always
           env:
+          - name: "NRIA_VERBOSE"
+            value: "1"
           - name: NRIA_LICENSE_KEY
-            value: "xxxxxxxxxxx"
+            value: "XXXXXXX"
           - name: CONTAINER_DISCOVERY
             value: "true"
           ### Sync integrations dynamically from your git repository
